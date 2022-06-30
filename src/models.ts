@@ -9,15 +9,21 @@ enum SkillPointCategory {
 class SkillPoint {
   name: string;
   category: SkillPointCategory;
+  attackOrDefense: number;
+  researchOrPractical: number;
   description: string | null;
 
   constructor(
     name: string,
     category: SkillPointCategory,
+    attackOrDefense: number,
+    researchOrPractical: number,
     description: string | null = null
   ) {
     this.name = name;
     this.category = category;
+    this.attackOrDefense = attackOrDefense;
+    this.researchOrPractical = researchOrPractical;
     this.description = description;
   }
 }
