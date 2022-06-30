@@ -35,13 +35,15 @@
 
 <script lang="ts">
 import Vue from "vue";
+import { Career, SkillPoint } from "@/models";
 
 export default Vue.extend({
   name: "App",
   data() {
     return {
-      careers: [],
-      skills: [],
+      langs: Object.keys(this.$i18n.messages),
+      careers: new Array<Career>(),
+      skillPoints: new Array<SkillPoint>(),
     };
   },
 });
