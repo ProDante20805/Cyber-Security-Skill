@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "target": "cssp",
+    "site": "cssp",
     "public": "dist",
     "ignore": [
       "firebase.json",
