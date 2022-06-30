@@ -1,22 +1,41 @@
-class Career {
-  name: string;
-  description: string;
-
-  constructor(name: string, description: string) {
-    this.name = name;
-    this.description = description;
-  }
+enum SkillPointCategory {
+  Product = "Product",
+  Network = "Network",
+  Organization = "Organization",
+  User = "User",
+  Other = "Other",
 }
+
 class SkillPoint {
   name: string;
-  category: string;
-  description: string;
+  category: SkillPointCategory;
+  description: string | null;
 
-  constructor(name: string, category: string, description: string) {
+  constructor(
+    name: string,
+    category: SkillPointCategory,
+    description: string | null = null
+  ) {
     this.name = name;
     this.category = category;
     this.description = description;
   }
 }
 
-export { Career, SkillPoint };
+class Career {
+  name: string;
+  requirements: object;
+  description: string | null;
+
+  constructor(
+    name: string,
+    requirements: object = {},
+    description: string | null = null
+  ) {
+    this.name = name;
+    this.requirements = requirements;
+    this.description = description;
+  }
+}
+
+export { SkillPointCategory, SkillPoint, Career };
