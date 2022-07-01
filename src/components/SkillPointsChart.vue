@@ -3,12 +3,18 @@
 </template>
 
 <script lang="ts">
-import { SkillPointCategory } from "@/models";
+import { SkillPointCategory, Career } from "@/models";
 import { skillPoints } from "@/resources";
 import i18n from "@/i18n";
 
 export default {
   name: "SkillPointsChart",
+  props: {
+    career: {
+      type: Career,
+      default: null,
+    },
+  },
   computed: {
     series(): { id: string; name: string; type: string }[] {
       return Object.keys(SkillPointCategory).map((skillPointCategory) => {

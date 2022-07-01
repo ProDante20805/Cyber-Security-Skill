@@ -12,11 +12,11 @@
           p {{ $t('app.description') }}
       b-row.justify-content-center.my-5
         b-col(cols="2")
-          career-selector
+          career-selector(v-model="selectedCareer")
         b-col(cols="4")
-          skill-points-chart
+          skill-points-chart(:career="selectedCareer")
         b-col(cols="2")
-          details-card
+          details-card(:career="selectedCareer")
       b-row
         b-col
           p.text-center
@@ -40,6 +40,11 @@ export default Vue.extend({
     SkillPointsChart,
     LanguageSelector,
     CareerSelector,
+  },
+  data() {
+    return {
+      selectedCareer: null,
+    };
   },
 });
 </script>
