@@ -7,7 +7,7 @@
         button
         :active="selectedCareer === null"
         @click="selectedCareer = null"
-        ) All
+        ) {{ $t(`careerSelector.optionAllTitle`) }}
       b-list-group-item(
         button
         v-for="career in careers"

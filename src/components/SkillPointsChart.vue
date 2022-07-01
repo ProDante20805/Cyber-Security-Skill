@@ -37,10 +37,10 @@ export default {
           axisLabel: {
             formatter: function (value: number) {
               switch (value) {
-                case -1:
-                  return "Research";
                 case 1:
-                  return "Practical";
+                  return i18n.t("skillPointsChart.xAxisPositiveName");
+                case -1:
+                  return i18n.t("skillPointsChart.xAxisNegativeName");
               }
             },
           },
@@ -59,10 +59,10 @@ export default {
           axisLabel: {
             formatter: function (value: number) {
               switch (value) {
-                case -1:
-                  return "Defence";
                 case 1:
-                  return "Attack";
+                  return i18n.t("skillPointsChart.yAxisPositiveName");
+                case -1:
+                  return i18n.t("skillPointsChart.yAxisNegativeName");
               }
             },
           },
