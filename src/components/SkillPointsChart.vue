@@ -3,11 +3,18 @@
 </template>
 
 <script lang="ts">
-import { SkillPointCategory } from "@/models";
+import { SkillPointCategory, Career } from "@/models";
+import { skillPoints } from "@/resources";
 import i18n from "@/i18n";
 
 export default {
   name: "SkillPointsChart",
+  props: {
+    career: {
+      type: Career,
+      default: null,
+    },
+  },
   computed: {
     series(): { id: string; name: string; type: string }[] {
       return Object.keys(SkillPointCategory).map((skillPointCategory) => {
@@ -17,12 +24,24 @@ export default {
             `skillPointCategories.${skillPointCategory}.name`
           ) as string,
           type: "scatter",
+          data: skillPoints
+            .filter((skillPoint) => skillPoint.category === skillPointCategory)
+            .map((skillPoint) => {
+              return {
+                name: i18n.t(`skillPoints.${skillPoint.id}.name`),
+                value: [
+                  skillPoint.researchOrPractical,
+                  skillPoint.defenseOrAttack,
+                ],
+              };
+            }),
         };
       });
     },
-    option() {
+    option(): object {
       return {
         legend: {},
+        tooltip: {},
         xAxis: {
           type: "value",
           min: -1,

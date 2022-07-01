@@ -31,7 +31,7 @@
     "description": "本網站列出了各種資安技能點與不同資安職位的技能需求。"
   },
   "careerSelector": {
-    "title": "職業",
+    "title": "職位",
     "optionAllTitle": "所有"
   },
   "skillPointsChart": {
@@ -43,6 +43,6 @@
   },
   "detailsCard": {
     "title": "詳細",
-    "description": "選擇職業以檢視其詳細資訊。"
+    "description": "選擇職位以檢視其詳細資訊。"
   }
 }

@@ -5,27 +5,33 @@
     b-list-group(flush)
       b-list-group-item(
         button
-        :active="selectedCareer === null"
-        @click="selectedCareer = null"
+        :active="value === null"
+        @click="$emit('input', null)"
         ) {{ $t(`careerSelector.optionAllTitle`) }}
       b-list-group-item(
         button
         v-for="career in careers"
-        :active="selectedCareer === career"
-        @click="selectedCareer = career"
+        :active="value === career"
+        @click="$emit('input', career)"
       ) {{ $t(`careers.${career.id}.name`) }}
 </template>
 
 <script lang="ts">
 import { careers } from "@/resources";
+import { Career } from "@/models";
 
 export default {
   name: "CareerSelector",
-  data() {
-    return {
-      careers: careers,
-      selectedCareer: null,
-    };
+  props: {
+    value: {
+      type: Career,
+      default: null,
+    },
+  },
+  computed: {
+    careers() {
+      return careers;
+    },
   },
 };
 </script>
