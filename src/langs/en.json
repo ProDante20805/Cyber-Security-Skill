@@ -1,0 +1,48 @@
+{
+  "skillPointCategories": {
+    "product": {
+      "name": "Product"
+    },
+    "network": {
+      "name": "Network"
+    },
+    "organization": {
+      "name": "Organization"
+    },
+    "user": {
+      "name": "User"
+    },
+    "other": {
+      "name": "Other"
+    }
+  },
+  "skillPoints": {
+    "malwareAnalysis": {
+      "name": "Malware Analysis"
+    }
+  },
+  "careers": {
+    "cybersecurityResearcher": {
+      "name": "Cybersecurity Researcher"
+    }
+  },
+  "app": {
+    "title": "Cybersecurity Skill Points",
+    "description": "This website lists various cybersecurity skill points and the requirements of different cybersecurity positions."
+  },
+  "careerSelector": {
+    "title": "Careers",
+    "optionAllTitle": "All"
+  },
+  "skillPointsChart": {
+    "title": "Skill Points",
+    "xAxisPositiveName": "Practical",
+    "xAxisNegativeName": "Research",
+    "yAxisPositiveName": "Attack",
+    "yAxisNegativeName": "Defence"
+  },
+  "detailsCard": {
+    "title": "Details",
+    "description": "Select a career to view its details."
+  }
+}

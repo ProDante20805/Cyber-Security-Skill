@@ -1,29 +1,22 @@
 <template lang="pug">
   div#app
     b-navbar
-      b-navbar-brand {{ $t('title') }}
+      b-navbar-brand
+        h2 {{ $t('app.title') }}
       b-collapse(is-nav)
         b-navbar-nav.ml-auto
-          b-nav-item-dropdown(right)
-            template(#button-content)
-              b-icon-globe
-              |
-              | {{ $t('language') }}
-            b-dropdown-item(v-for="lang in langs" @click="$i18n.locale = lang") {{ lang }}
+          language-selector
     b-container.mt-5(fluid)
-      b-row.justify-content-center
+      b-row
+        b-col
+          p {{ $t('app.description') }}
+      b-row.justify-content-center.my-5
         b-col(cols="2")
-          b-card(no-body)
-            b-card-body
-              b-card-title {{ $t('careers') }}
-            b-list-group(flush)
-              b-list-group-item(v-for="career in careers") {{ career.name }}
+          career-selector
         b-col(cols="4")
-          v-chart
+          skill-points-chart
         b-col(cols="2")
-          b-card(no-body)
-            b-card-body
-              b-card-title {{ $t('details') }}
+          details-card
       b-row
         b-col
           p.text-center
@@ -35,16 +28,18 @@
 
 <script lang="ts">
 import Vue from "vue";
-import { Career, SkillPoint } from "@/models";
+import CareerSelector from "@/components/CareerSelector.vue";
+import LanguageSelector from "@/components/LanguageSelector.vue";
+import SkillPointsChart from "@/components/SkillPointsChart.vue";
+import DetailsCard from "@/components/DetailsCard.vue";
 
 export default Vue.extend({
   name: "App",
-  data() {
-    return {
-      langs: Object.keys(this.$i18n.messages),
-      careers: new Array<Career>(),
-      skillPoints: new Array<SkillPoint>(),
-    };
+  components: {
+    DetailsCard,
+    SkillPointsChart,
+    LanguageSelector,
+    CareerSelector,
   },
 });
 </script>
