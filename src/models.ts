@@ -1,46 +1,37 @@
 enum SkillPointCategory {
-  Product = "product",
-  Network = "network",
-  Organization = "organization",
-  User = "user",
-  Other = "other",
+  product = "product",
+  network = "network",
+  organization = "organization",
+  user = "user",
+  other = "other",
 }
 
 class SkillPoint {
-  name: string;
+  id: string;
   category: SkillPointCategory;
   defenseOrAttack: number;
   researchOrPractical: number;
-  description: string | null;
 
   constructor(
-    name: string,
+    id: string,
     category: SkillPointCategory,
     defenseOrAttack: number,
-    researchOrPractical: number,
-    description: string | null = null
+    researchOrPractical: number
   ) {
-    this.name = name;
+    this.id = id;
     this.category = category;
     this.defenseOrAttack = defenseOrAttack;
     this.researchOrPractical = researchOrPractical;
-    this.description = description;
   }
 }
 
 class Career {
-  name: string;
+  id: string;
   requirements: object;
-  description: string | null;
 
-  constructor(
-    name: string,
-    requirements: object = {},
-    description: string | null = null
-  ) {
-    this.name = name;
+  constructor(id: string, requirements: object = {}) {
+    this.id = id;
     this.requirements = requirements;
-    this.description = description;
   }
 }
 
