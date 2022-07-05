@@ -19,6 +19,9 @@
           details-card(:career="selectedCareer")
       b-row
         b-col
+          p(v-for="level in [0,2,4,6,8,10]") {{ level }}: {{ $t(`levels.${level}.description`) }}
+      b-row
+        b-col
           p.text-center
             | © 2022 Alyssum
             | |

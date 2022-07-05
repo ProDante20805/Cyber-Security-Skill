@@ -16,6 +16,26 @@
       "name": "其他"
     }
   },
+  "levels": {
+    "0": {
+      "description": "無知識或經驗要求"
+    },
+    "2": {
+      "description": "需基礎知識或經驗"
+    },
+    "4": {
+      "description": "需相關知識或經驗"
+    },
+    "6": {
+      "description": "需進階知識或較多經驗"
+    },
+    "8": {
+      "description": "需專業知識或豐富經驗"
+    },
+    "10": {
+      "description": "需多位專業人士共同合作"
+    }
+  },
   "skillPoints": {
     "malwareAnalysis": {
       "name": "惡意軟體分析"

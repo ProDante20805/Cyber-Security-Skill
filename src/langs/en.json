@@ -16,6 +16,26 @@
       "name": "Other"
     }
   },
+  "levels": {
+    "0": {
+      "description": "No knowledge or experience required"
+    },
+    "2": {
+      "description": "Basic knowledge or experience required"
+    },
+    "4": {
+      "description": "Relevant knowledge or experience required"
+    },
+    "6": {
+      "description": "Advanced knowledge or more experience required"
+    },
+    "8": {
+      "description": "Professional knowledge or extensive experience required"
+    },
+    "10": {
+      "description": "Requiring the cooperation of multiple professionals"
+    }
+  },
   "skillPoints": {
     "malwareAnalysis": {
       "name": "Malware Analysis"
