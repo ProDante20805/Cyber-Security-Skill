@@ -16,27 +16,33 @@ export default {
     },
   },
   computed: {
-    series(): { id: string; name: string; type: string }[] {
-      return Object.keys(SkillPointCategory).map((skillPointCategory) => {
-        return {
-          id: skillPointCategory,
-          name: i18n.t(
-            `skillPointCategories.${skillPointCategory}.name`
-          ) as string,
-          type: "scatter",
-          data: skillPoints
-            .filter((skillPoint) => skillPoint.category === skillPointCategory)
-            .map((skillPoint) => {
-              return {
-                name: i18n.t(`skillPoints.${skillPoint.id}.name`),
-                value: [
-                  skillPoint.researchOrPractical,
-                  skillPoint.defenseOrAttack,
-                ],
-              };
-            }),
-        };
-      });
+    series(): object[] {
+      const scatterSeries = Object.keys(SkillPointCategory).map(
+        (skillPointCategory) => {
+          return {
+            id: skillPointCategory,
+            name: i18n.t(
+              `skillPointCategories.${skillPointCategory}.name`
+            ) as string,
+            type: "scatter",
+            label: { show: true, position: "bottom", formatter: "{b}" },
+            data: skillPoints
+              .filter(
+                (skillPoint) => skillPoint.category === skillPointCategory
+              )
+              .map((skillPoint) => {
+                return {
+                  name: i18n.t(`skillPoints.${skillPoint.id}.name`),
+                  value: [
+                    skillPoint.researchOrPractical,
+                    skillPoint.defenseOrAttack,
+                  ],
+                };
+              }),
+          };
+        }
+      );
+      return [...scatterSeries];
     },
     option(): object {
       return {
