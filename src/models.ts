@@ -1,5 +1,5 @@
 enum SkillPointCategory {
-  product = "product",
+  software = "software",
   network = "network",
   organization = "organization",
   user = "user",
