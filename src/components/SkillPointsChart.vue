@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts">
-import { SkillPointCategory, Career } from "@/models";
+import { SKILL_POINT_MAX_LEVEL, SkillPointCategory, Career } from "@/models";
 import { skillPoints } from "@/resources";
 import i18n from "@/i18n";
 
@@ -26,6 +26,7 @@ export default {
             ) as string,
             type: "scatter",
             label: { show: true, position: "bottom", formatter: "{b}" },
+            clip: false,
             data: skillPoints
               .filter(
                 (skillPoint) => skillPoint.category === skillPointCategory
@@ -50,21 +51,18 @@ export default {
         tooltip: {},
         xAxis: {
           type: "value",
-          min: -10,
-          max: 10,
-          nameLocation: "center",
+          min: -SKILL_POINT_MAX_LEVEL,
+          max: SKILL_POINT_MAX_LEVEL,
           axisLine: {
             symbol: "arrow",
           },
-          axisTick: {
-            show: false,
-          },
           axisLabel: {
+            margin: 32,
             formatter: function (value: number) {
               switch (value) {
-                case 10:
+                case SKILL_POINT_MAX_LEVEL:
                   return i18n.t("skillPointsChart.xAxisPositiveName");
-                case -10:
+                case -SKILL_POINT_MAX_LEVEL:
                   return i18n.t("skillPointsChart.xAxisNegativeName");
               }
             },
@@ -72,21 +70,18 @@ export default {
         },
         yAxis: {
           type: "value",
-          min: -10,
-          max: 10,
-          nameLocation: "center",
+          min: -SKILL_POINT_MAX_LEVEL,
+          max: SKILL_POINT_MAX_LEVEL,
           axisLine: {
             symbol: "arrow",
           },
-          axisTick: {
-            show: false,
-          },
           axisLabel: {
+            margin: 32,
             formatter: function (value: number) {
               switch (value) {
-                case 10:
+                case SKILL_POINT_MAX_LEVEL:
                   return i18n.t("skillPointsChart.yAxisPositiveName");
-                case -10:
+                case -SKILL_POINT_MAX_LEVEL:
                   return i18n.t("skillPointsChart.yAxisNegativeName");
               }
             },

@@ -1,3 +1,5 @@
+const SKILL_POINT_MAX_LEVEL = 10;
+
 enum SkillPointCategory {
   software = "software",
   hardware = "hardware",
@@ -36,4 +38,4 @@ class Career {
   }
 }
 
-export { SkillPointCategory, SkillPoint, Career };
+export { SKILL_POINT_MAX_LEVEL, SkillPointCategory, SkillPoint, Career };
