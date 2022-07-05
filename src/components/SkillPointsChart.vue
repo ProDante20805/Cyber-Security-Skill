@@ -50,8 +50,8 @@ export default {
         tooltip: {},
         xAxis: {
           type: "value",
-          min: -1,
-          max: 1,
+          min: -10,
+          max: 10,
           nameLocation: "center",
           axisLine: {
             symbol: "arrow",
@@ -62,9 +62,9 @@ export default {
           axisLabel: {
             formatter: function (value: number) {
               switch (value) {
-                case 1:
+                case 10:
                   return i18n.t("skillPointsChart.xAxisPositiveName");
-                case -1:
+                case -10:
                   return i18n.t("skillPointsChart.xAxisNegativeName");
               }
             },
@@ -72,8 +72,8 @@ export default {
         },
         yAxis: {
           type: "value",
-          min: -1,
-          max: 1,
+          min: -10,
+          max: 10,
           nameLocation: "center",
           axisLine: {
             symbol: "arrow",
@@ -84,9 +84,9 @@ export default {
           axisLabel: {
             formatter: function (value: number) {
               switch (value) {
-                case 1:
+                case 10:
                   return i18n.t("skillPointsChart.yAxisPositiveName");
-                case -1:
+                case -10:
                   return i18n.t("skillPointsChart.yAxisNegativeName");
               }
             },
