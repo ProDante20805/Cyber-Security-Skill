@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts">
-import { SkillPointCategory, Career } from "@/models";
+import { SKILL_POINT_MAX_LEVEL, SkillPointCategory, Career } from "@/models";
 import { skillPoints } from "@/resources";
 import i18n from "@/i18n";
 
@@ -16,27 +16,34 @@ export default {
     },
   },
   computed: {
-    series(): { id: string; name: string; type: string }[] {
-      return Object.keys(SkillPointCategory).map((skillPointCategory) => {
-        return {
-          id: skillPointCategory,
-          name: i18n.t(
-            `skillPointCategories.${skillPointCategory}.name`
-          ) as string,
-          type: "scatter",
-          data: skillPoints
-            .filter((skillPoint) => skillPoint.category === skillPointCategory)
-            .map((skillPoint) => {
-              return {
-                name: i18n.t(`skillPoints.${skillPoint.id}.name`),
-                value: [
-                  skillPoint.researchOrPractical,
-                  skillPoint.defenseOrAttack,
-                ],
-              };
-            }),
-        };
-      });
+    series(): object[] {
+      const scatterSeries = Object.keys(SkillPointCategory).map(
+        (skillPointCategory) => {
+          return {
+            id: skillPointCategory,
+            name: i18n.t(
+              `skillPointCategories.${skillPointCategory}.name`
+            ) as string,
+            type: "scatter",
+            label: { show: true, position: "bottom", formatter: "{b}" },
+            clip: false,
+            data: skillPoints
+              .filter(
+                (skillPoint) => skillPoint.category === skillPointCategory
+              )
+              .map((skillPoint) => {
+                return {
+                  name: i18n.t(`skillPoints.${skillPoint.id}.name`),
+                  value: [
+                    skillPoint.researchOrPractical,
+                    skillPoint.defenseOrAttack,
+                  ],
+                };
+              }),
+          };
+        }
+      );
+      return [...scatterSeries];
     },
     option(): object {
       return {
@@ -44,21 +51,18 @@ export default {
         tooltip: {},
         xAxis: {
           type: "value",
-          min: -1,
-          max: 1,
-          nameLocation: "center",
+          min: -SKILL_POINT_MAX_LEVEL,
+          max: SKILL_POINT_MAX_LEVEL,
           axisLine: {
             symbol: "arrow",
           },
-          axisTick: {
-            show: false,
-          },
           axisLabel: {
+            margin: 32,
             formatter: function (value: number) {
               switch (value) {
-                case 1:
+                case SKILL_POINT_MAX_LEVEL:
                   return i18n.t("skillPointsChart.xAxisPositiveName");
-                case -1:
+                case -SKILL_POINT_MAX_LEVEL:
                   return i18n.t("skillPointsChart.xAxisNegativeName");
               }
             },
@@ -66,21 +70,18 @@ export default {
         },
         yAxis: {
           type: "value",
-          min: -1,
-          max: 1,
-          nameLocation: "center",
+          min: -SKILL_POINT_MAX_LEVEL,
+          max: SKILL_POINT_MAX_LEVEL,
           axisLine: {
             symbol: "arrow",
           },
-          axisTick: {
-            show: false,
-          },
           axisLabel: {
+            margin: 32,
             formatter: function (value: number) {
               switch (value) {
-                case 1:
+                case SKILL_POINT_MAX_LEVEL:
                   return i18n.t("skillPointsChart.yAxisPositiveName");
-                case -1:
+                case -SKILL_POINT_MAX_LEVEL:
                   return i18n.t("skillPointsChart.yAxisNegativeName");
               }
             },

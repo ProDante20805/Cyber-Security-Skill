@@ -1,5 +1,8 @@
+const SKILL_POINT_MAX_LEVEL = 10;
+
 enum SkillPointCategory {
-  product = "product",
+  software = "software",
+  hardware = "hardware",
   network = "network",
   organization = "organization",
   user = "user",
@@ -9,19 +12,19 @@ enum SkillPointCategory {
 class SkillPoint {
   id: string;
   category: SkillPointCategory;
-  defenseOrAttack: number;
   researchOrPractical: number;
+  defenseOrAttack: number;
 
   constructor(
     id: string,
     category: SkillPointCategory,
-    defenseOrAttack: number,
-    researchOrPractical: number
+    researchOrPractical: number,
+    defenseOrAttack: number
   ) {
     this.id = id;
     this.category = category;
-    this.defenseOrAttack = defenseOrAttack;
     this.researchOrPractical = researchOrPractical;
+    this.defenseOrAttack = defenseOrAttack;
   }
 }
 
@@ -35,4 +38,4 @@ class Career {
   }
 }
 
-export { SkillPointCategory, SkillPoint, Career };
+export { SKILL_POINT_MAX_LEVEL, SkillPointCategory, SkillPoint, Career };
