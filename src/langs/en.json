@@ -1,7 +1,10 @@
 {
   "skillPointCategories": {
-    "product": {
-      "name": "Product"
+    "software": {
+      "name": "Software"
+    },
+    "hardware": {
+      "name": "Hardware"
     },
     "network": {
       "name": "Network"
@@ -37,13 +40,64 @@
     }
   },
   "skillPoints": {
+    "redTeam": {
+      "name": "Red Team"
+    },
+    "vulnerabilityResearch": {
+      "name": "Vulnerability Research"
+    },
+    "penetrationTesting": {
+      "name": "Penetration Testing"
+    },
+    "vulnerabilityScanning": {
+      "name": "Vulnerability Scanning"
+    },
+    "phishing": {
+      "name": "Phishing"
+    },
+    "stressTesting": {
+      "name": "Stress Testing"
+    },
+    "dataBackup": {
+      "name": "Data Backup"
+    },
+    "assetManagement": {
+      "name": "Asset management"
+    },
+    "networkTrafficAnalysis": {
+      "name": "Network Traffic Analysis"
+    },
+    "incidentResponse": {
+      "name": "Incident Response"
+    },
+    "sourceCodeAnalysis": {
+      "name": "Source Code Analysis"
+    },
+    "benchmarkAuditing": {
+      "name": "Benchmark Auditing"
+    },
     "malwareAnalysis": {
       "name": "Malware Analysis"
+    },
+    "digitalForensics": {
+      "name": "Digital Forensics"
+    },
+    "cybersecurityArchitecturePlanning": {
+      "name": "Cybersecurity Architecture Planning"
+    },
+    "benchmarkFormulating": {
+      "name": "Benchmark Formulating"
     }
   },
   "careers": {
     "cybersecurityResearcher": {
       "name": "Cybersecurity Researcher"
+    },
+    "cybersecurityAuditor": {
+      "name": "Cybersecurity Auditor"
+    },
+    "chiefCybersecurityOfficer": {
+      "name": "Chief Cybersecurity Officer"
     }
   },
   "app": {

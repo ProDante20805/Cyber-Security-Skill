@@ -1,7 +1,10 @@
 {
   "skillPointCategories": {
-    "product": {
-      "name": "產品"
+    "software": {
+      "name": "軟體"
+    },
+    "hardware": {
+      "name": "硬體"
     },
     "network": {
       "name": "網路"
@@ -37,13 +40,64 @@
     }
   },
   "skillPoints": {
+    "redTeam": {
+      "name": "紅隊演練"
+    },
+    "vulnerabilityResearch": {
+      "name": "漏洞研究"
+    },
+    "penetrationTesting": {
+      "name": "滲透測試"
+    },
+    "vulnerabilityScanning": {
+      "name": "弱點掃描"
+    },
+    "phishing": {
+      "name": "網路釣魚"
+    },
+    "stressTesting": {
+      "name": "壓力測試"
+    },
+    "dataBackup": {
+      "name": "資料備援"
+    },
+    "assetManagement": {
+      "name": "資產管理"
+    },
+    "networkTrafficAnalysis": {
+      "name": "網路流量分析"
+    },
+    "incidentResponse": {
+      "name": "事件響應"
+    },
+    "sourceCodeAnalysis": {
+      "name": "源碼檢測"
+    },
+    "benchmarkAuditing": {
+      "name": "基準稽核"
+    },
     "malwareAnalysis": {
       "name": "惡意軟體分析"
+    },
+    "digitalForensics": {
+      "name": "數位鑑識"
+    },
+    "cybersecurityArchitecturePlanning": {
+      "name": "資安架構規劃"
+    },
+    "benchmarkFormulating": {
+      "name": "基準制定"
     }
   },
   "careers": {
     "cybersecurityResearcher": {
       "name": "資安研究員"
+    },
+    "cybersecurityAuditor": {
+      "name": "資安稽核員"
+    },
+    "chiefCybersecurityOfficer": {
+      "name": "資安長"
     }
   },
   "app": {
